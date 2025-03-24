@@ -1,5 +1,4 @@
 % TO DO List
-% _ Atualizar comando de ataque
 % _ Inserir comando de feitiços e cantrips
 % _ Adicionar checagem com base em tipos de armas ao invés
 % de nomes individuais, como Armas Simples e Armas a Distância
@@ -27,40 +26,40 @@ character_race(elf).
 character_subrace(drow).
 
 % Atributos
-base_attribute(strength,     8).
-base_attribute(dexterity,    16).
-base_attribute(constitution, 10).
-base_attribute(intelligence, 12).
-base_attribute(wisdom,       14).
-base_attribute(charisma,     19).
+character_attribute(strength,     8).
+character_attribute(dexterity,    16).
+character_attribute(constitution, 10).
+character_attribute(intelligence, 12).
+character_attribute(wisdom,       14).
+character_attribute(charisma,     19).
 
 % Habilidades e proficiências
-base_skill(athletics,        not_proficient).
-base_skill(acrobatics,       proficient).
-base_skill(sleight_of_hand,  not_proficient).
-base_skill(stealth,          proficient).
-base_skill(arcana,           not_proficient).
-base_skill(history,          proficient).
-base_skill(investigation,    proficient).
-base_skill(nature,           proficient).
-base_skill(religion,         not_proficient).
-base_skill(animal_handling,  not_proficient).
-base_skill(insight,          proficient).
-base_skill(medicine,         not_proficient).
-base_skill(perception,       proficient).
-base_skill(survival,         not_proficient).
-base_skill(deception,        proficient).
-base_skill(intimidation,     not_proficient).
-base_skill(performance,      expert).
-base_skill(persuasion,       expert).
+character_skill(athletics,        not_proficient).
+character_skill(acrobatics,       proficient).
+character_skill(sleight_of_hand,  not_proficient).
+character_skill(stealth,          proficient).
+character_skill(arcana,           not_proficient).
+character_skill(history,          proficient).
+character_skill(investigation,    proficient).
+character_skill(nature,           proficient).
+character_skill(religion,         not_proficient).
+character_skill(animal_handling,  not_proficient).
+character_skill(insight,          proficient).
+character_skill(medicine,         not_proficient).
+character_skill(perception,       proficient).
+character_skill(survival,         not_proficient).
+character_skill(deception,        proficient).
+character_skill(intimidation,     not_proficient).
+character_skill(performance,      expert).
+character_skill(persuasion,       expert).
 
 % Testes de resistência
-base_saving_throw(strength,     not_proficient).
-base_saving_throw(dexterity,    proficient).
-base_saving_throw(constitution, not_proficient).
-base_saving_throw(intelligence, not_proficient).
-base_saving_throw(wisdom,       not_proficient).
-base_saving_throw(charisma,     proficient).
+character_saving_throw(strength,     not_proficient).
+character_saving_throw(dexterity,    proficient).
+character_saving_throw(constitution, not_proficient).
+character_saving_throw(intelligence, not_proficient).
+character_saving_throw(wisdom,       not_proficient).
+character_saving_throw(charisma,     proficient).
 
 % Atributos derivados
 armor_class_bonus(1).

@@ -39,24 +39,33 @@ proficiency_calc(not_proficient, Proficiency_Bonus, Proficiency_Total) :-
 % Habilidades
 skill_bonus(Skill, Bonus) :-
   skill(Attribute, Skill),
-  base_skill(Skill, Proficiency),
+  character_skill(Skill, Proficiency),
   attribute_modifier(Attribute, Attribute_Modifier),
   proficiency_value(Proficiency, Proficiency_Bonus),
   Bonus is Attribute_Modifier + Proficiency_Bonus.
 
-roll_skill(Skill, Skill_roll) :-
-  d20(Die),
+roll_skill(Skill) :-
+  d20(Die1), d20(Die2),
   skill_bonus(Skill, Skill_bonus),
-  Skill_roll is Die + Skill_bonus.
+  Skill_roll1 is Die1 + Skill_bonus, Skill_roll2 is Die2 + Skill_bonus,
+  write("Skill roll for "), write(Skill), writeln(": "),
+  write(Skill_roll1), write("("), write(Die1), write(") / "),
+  write(Skill_roll2), write("("), write(Die2), writeln(")").
+
 
 % Testes de resistência
 saving_throw_bonus(Attribute, Bonus) :-
-  base_saving_throw(Attribute, Proficiency),
+  character_saving_throw(Attribute, Proficiency),
   attribute_modifier(Attribute, Attribute_Modifier),
   proficiency_value(Proficiency, Proficiency_Bonus),
   Bonus is Attribute_Modifier + Proficiency_Bonus.
 
-roll_saving_throw(Attribute, Saving_roll) :-
-  d20(Die),
+roll_saving_throw(Attribute) :-
+  d20(Die1), d20(Die2),
   saving_throw_bonus(Attribute, Saving_bonus),
-  Saving_roll is Die + Saving_bonus.
+  Saving_roll1 is Die1 + Saving_bonus,
+  Saving_roll2 is Die2 + Saving_bonus,
+  write("Saving throw roll for "), write(Attribute), writeln(": "),
+  write(Saving_roll1), write("("), write(Die1), write(") / "),
+  write(Saving_roll2), write("("), write(Die2), writeln(")").
+

@@ -8,7 +8,7 @@ attribute(charisma).
 
 % Modificadores
 attribute_modifier(Attribute, Modifier) :-
-  base_attribute(Attribute, Score),
+  character_attribute(Attribute, Score),
   attribute_modifier_calc(Score, Modifier).
 
 attribute_modifier_calc(Score, -5) :- Score >=  0, Score =<  1, !.
@@ -34,10 +34,11 @@ initiative(Initiative_total) :-
   attribute_modifier(dexterity, Dexterity_Modifier),
   initiative_bonus(Initiative_bonus),
   Initiative_total is Initiative_bonus + Dexterity_Modifier.
-roll_initiative(Initiative_roll) :-
+roll_initiative() :-
   d20(Die),
   initiative(Initiative_bonus),
-  Initiative_roll is Die + Initiative_bonus.
+  Initiative_roll is Die + Initiative_bonus,
+  write("Initiative roll: "), writeln(Initiative_roll).
 % Pontos de vida
 hit_points(HP_total) :-
   character_level(Level),

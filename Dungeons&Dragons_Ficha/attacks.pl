@@ -1,7 +1,7 @@
 % Testes de ataque
 weapon_attack(Weapon_name) :-
   weapon(Weapon_name, Weapon_type, Enchantment),
-  weapon_stats(Weapon_type, Damage_die, Dice_numbers, Damage_Type, Attribute),
+  weapon_stats(Weapon_type, Dice_numbers, Damage_die, Damage_Type, Attribute),
   attribute_modifier(Attribute, Attribute_Mod),
   weapon_proficiency(Weapon_type, Proficiency_bonus),
   d20(Attack1),
