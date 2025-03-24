@@ -17,19 +17,6 @@ skill(charisma,     intimidation).
 skill(charisma,     performance).
 skill(charisma,     persuasion).
 
-% Modificadores
-attribute_modifier_calc(Score, -5) :- Score >=  0, Score =<  1, !.
-attribute_modifier_calc(Score, -4) :- Score >=  2, Score =<  3, !.
-attribute_modifier_calc(Score, -3) :- Score >=  4, Score =<  5, !.
-attribute_modifier_calc(Score, -2) :- Score >=  6, Score =<  7, !.
-attribute_modifier_calc(Score, -1) :- Score >=  8, Score =<  9, !.
-attribute_modifier_calc(Score,  0) :- Score >= 10, Score =< 11, !.
-attribute_modifier_calc(Score,  1) :- Score >= 12, Score =< 13, !.
-attribute_modifier_calc(Score,  2) :- Score >= 14, Score =< 15, !.
-attribute_modifier_calc(Score,  3) :- Score >= 16, Score =< 17, !.
-attribute_modifier_calc(Score,  4) :- Score >= 18, Score =< 19, !.
-attribute_modifier_calc(Score,  5) :- Score >= 20.
-
 % Proficiência
 proficiency_modifier(Level, 2) :- Level >=  1, Level =<  4, !.
 proficiency_modifier(Level, 3) :- Level >=  5, Level =<  8, !.

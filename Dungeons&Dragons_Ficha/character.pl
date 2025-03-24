@@ -1,10 +1,12 @@
 % TO DO List
+% _ Atualizar comando de ataque
+% _ Inserir comando de feitiços e cantrips
 % _ Adicionar checagem com base em tipos de armas ao invés
 % de nomes individuais, como Armas Simples e Armas a Distância
 % _ Adicionar checagem especial para armas com Finesse
-% _ Alterar sistema de dano para diferenciar quantias diferentes
-% de dados. Ex.: 2d6 != 1d12
-% _ Adicionar feitiços
+% _ Adicionar feitiços e cantrips
+% _ Adicionar formatação do texto de output para as ações
+% _ Adicionar traits e características de classes e raças
 
 % Importação
 :- consult('attacks.pl').
