@@ -42,9 +42,9 @@ weapon_stats(longbow,        1,  8,    piercing, dexterity).
 
 % Confirmar proficiência com a arma
 weapon_proficiency(Weapon_type, Proficiency_Bonus) :-
-  item_proficiency(Weapon_type) , !,
+  item_proficiency(Weapon_type),
   character_level(Level),
-  proficiency_modifier(Level, Proficiency_Bonus) .
+  proficiency_modifier(Level, Proficiency_Bonus), !.
 weapon_proficiency(_, Proficiency_Bonus) :-
   Proficiency_Bonus is 0.
 

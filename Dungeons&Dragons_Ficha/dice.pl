@@ -1,6 +1,8 @@
 % Dados
 roll_die(Number, Result) :-
   random_between(1, Number, Result).
+roll_die_sum(0, _, Result) :-
+  Result is 0, !.
 roll_die_sum(1, Number, Result) :-
   roll_die(Number, Result), !.
 roll_die_sum(N, Number, Result) :-

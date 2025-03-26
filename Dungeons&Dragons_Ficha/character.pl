@@ -1,9 +1,8 @@
 % TO DO List
-% _ Inserir comando de feitiços e cantrips
 % _ Adicionar checagem com base em tipos de armas ao invés
 % de nomes individuais, como Armas Simples e Armas a Distância
 % _ Adicionar checagem especial para armas com Finesse
-% _ Adicionar feitiços e cantrips
+% _ Adicionar feitiços restantes
 % _ Adicionar formatação do texto de output para as ações
 % _ Adicionar traits e características de classes e raças
 
