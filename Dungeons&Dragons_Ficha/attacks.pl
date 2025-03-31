@@ -23,6 +23,7 @@ weapon_attack(Weapon_name) :-
 % Roll types: save_dc, spell_roll, guaranteed
 cantrip_attack(Cantrip_name) :-
   cantrip_stats(Cantrip_name, Dice_numbers, Damage_die, Damage_Type, Roll_type),
+  character_cantrip(Cantrip_name),
   character_level(Level),
   cantrip_level(Level, Cantrip_Level),
   Total_dice_numbers = Dice_numbers + Cantrip_Level - 1,
@@ -61,6 +62,7 @@ cantrip_result(Cantrip_name, Damage, Damage_Type, spell_roll) :-
 
 spell_attack(Spell_name, Slot_Level) :-
   spell_stats(Spell_name, Dice_numbers, Damage_die, Spell_Level, Damage_Type, Roll_type),
+  character_spell(Spell_name),
   Slot_Level >= Spell_Level,
   Total_dice_numbers = Dice_numbers + (Slot_Level - Spell_Level),
   roll_dice(Total_dice_numbers, Damage_die, Damage),

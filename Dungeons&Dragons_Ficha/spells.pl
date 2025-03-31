@@ -47,30 +47,31 @@ spell_stats(dimension_door,          4,  6, 4, force, guaranteed).
 % Disintegrate dá 40 de dano extra
 spell_stats(disintegrate,           10,  6, 6, force, save_dc).
 spell_stats(dissonant_whispers,      3,  6, 1, psychic, save_dc).
-% Earthquake
-% Ensnaring Strike
-% Evard’s Black Tentacles
+spell_stats(earthquake,              5,  6, 8, bludgeoning, save_dc).
+spell_stats(ensnaring_strike,        1,  6, 1, piercing, save_dc).
+spell_stats(evards_black_tentacles,  3,  6, 4, bludgeoning, save_dc).
 % False life gives an extra 4 temporary hp
 spell_stats(false_life,              1,  4, 1, temporary_hp, guaranteed).
-% Feeblemind
-% Finger of Death
+spell_stats(feeblemind,              4,  6, 8, psychic, guaranteed).
+% Finger of Death dá 30 de dano extra
+spell_stats(finger_of_death,         7,  8, 7, necrotic, save_dc).
 spell_stats(fireball,                8,  6, 3, fire, save_dc).
-% Fire Shield
-% Fire Storm
+spell_stats(fire_shield,             2,  8, 4, [fire, cold], guaranteed).
+spell_stats(fire_storm,              7, 10, 7, fire, save_dc).
 % Flame Blade
 % Flame Strike
 % Flaming Sphere
 % Glyph of Warding
 % Guardian of Faith
-spell_stats(guiding_bolt,            4, 6, 1, radiant, spell_roll).
-% Hail of Thorns
-% Harm
-% Heal
+spell_stats(guiding_bolt,            4,  6, 1, radiant, spell_roll).
+spell_stats(hail_of_thorns,          1, 10, 1, piercing, save_dc).
+spell_stats(harm,                   14,  6, 6, necrotic, save_dc).
+% Heal recupera exatos 70 pontos de vida
 % Healing word adiciona o modificador de spellcasting
-spell_stats(healing_word,            1, 4, 1, healing, guaranteed).
-% Heat Metal
-% Hellish Rebuke
-spell_stats(hex,                     1, 6, 1, necrotic, guaranteed).
+spell_stats(healing_word,            1,  4, 1, healing, guaranteed).
+spell_stats(heat_metal,              2,  8, 2, fire, guaranteed).
+spell_stats(hellish_rebuke,          2, 10, 1, fire, save_dc).
+spell_stats(hex,                     1,  6, 1, necrotic, guaranteed).
 % Hunger of Hadar
 % Hunter's Mark
 % Ice Storm
@@ -95,7 +96,7 @@ spell_stats(magic_missile,           1,  4, 1, force, guaranteed).
 % Regenerate
 % São 3 raios, esse é o dano de 1
 spell_stats(scorching_ray,           2,  6, 2, fire, spell_roll).
-% Searing Smite
+spell_stats(searing_smite,           1,  6, 1, fire, save_dc).
 spell_stats(shatter,                 3,  8, 2, thunder, save_dc).
 % Spike Growth
 % Spirit Guardians
@@ -104,13 +105,14 @@ spell_stats(shatter,                 3,  8, 2, thunder, save_dc).
 % Sunburst
 % Thunderous Smite
 spell_stats(vampiric_touch,          3,  6, 3, necrotic, spell_roll).
-% Wall of Fire
-% Wall of Ice
-% Wall of Thorns
-% Weird
-% Wind Wall
+spell_stats(wall_of_fire,            5,  8, 4, fire, save_dc).
+spell_stats(wall_of_ice,            10,  6, 6, cold, save_dc).
+spell_stats(wall_of_thorns,          7,  8, 6, piercing, save_dc).
+spell_stats(weird,                   4, 10, 9, psychic, save_dc).
+spell_stats(wind_wall,               3,  8, 3, bludgeoning, save_dc).
 spell_stats(witch_bolt,              1, 12, 1, lightning, spell_roll).
 spell_stats(wrathful_smite,          1,  6, 1, psychic, guaranteed).
+
 
 % Nível da Cantrip
 cantrip_level(Level, 1) :- Level >=  1, Level =<  4, !.
@@ -131,3 +133,9 @@ spellcasting_bonus(Spellcasting_bonus) :-
 spellDC_value(DC_value) :-
   spellcasting_bonus(Spellcasting_bonus),
   DC_value is 8 + Spellcasting_bonus.
+
+
+% Bônus de dano em determinados feitiços
+spell_bonus(false_life,    4):- !.
+spell_bonus(magic_missile, 1):- !.
+spell_bonus(_,             0).

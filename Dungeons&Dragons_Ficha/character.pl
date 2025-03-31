@@ -12,6 +12,7 @@
 :- consult('classes.pl').
 :- consult('dice.pl').
 :- consult('races.pl').
+:- consult('sinopsis.pl').
 :- consult('skills.pl').
 :- consult('spells.pl').
 :- consult('weapons.pl').
@@ -21,8 +22,10 @@
 character_name("Amon").
 character_level(4).
 character_class(bard).
+character_subclass(college_of_lore).
 character_race(elf).
 character_subrace(drow).
+character_alignment(neutral).
 
 % Atributos
 character_attribute(strength,     8).
@@ -64,7 +67,6 @@ character_saving_throw(charisma,     proficient).
 armor_class_bonus(1).
 initiative_bonus(0).
 
-% Armas e Ataques
 % Armas
 % Formatação básica: (Nome, Tipo, Encantamento)
 weapon(flauta_perfurante, dagger,   0).
@@ -72,25 +74,57 @@ weapon(rapieira,          rapier,   1).
 weapon(arco_curto,        shortbow, 0).
 
 % Feitiços
+character_cantrip(dancing_lights).
+character_cantrip(mending).
+character_cantrip(minor_illusion).
+character_cantrip(prestidigitation).
+character_cantrip(vicious_mockery).
+
+character_spell(charm_person).
+character_spell(comprehend_languages).
+character_spell(cure_wounds).
+character_spell(disguise_slf).
+character_spell(dissonant_whispers).
+character_spell(enhance_ability).
+character_spell(silent_image).
+character_spell(suggestion).
+character_spell(unseen_servant).
+
+
+% Características e habilidades
+character_trait(trance,               racial).
+character_trait(night_vision,         racial).
+character_trait(sunlight_sensibility, racial).
+character_trait(jack_of_all_trades,   class).
+character_trait(song_of_rest,         class).
+character_trait(born_persuasive,      other).
 
 % Outros
 % Linguagens
-language(common).
-language(elvish).
-language(celestial).
+character_language(common).
+character_language(elvish).
+character_language(celestial).
 % Proficiências em equipamentos
-item_proficiency(light_armor).
-item_proficiency(rapier).
-item_proficiency(shortsword).
-item_proficiency(hand_crossbow).
-item_proficiency(simple_weapons).
-item_proficiency(longbow).
-item_proficiency(crossbow).
-item_proficiency(unarmed).
+character_item_proficiency(light_armor).
+character_item_proficiency(rapier).
+character_item_proficiency(shortsword).
+character_item_proficiency(hand_crossbow).
+character_item_proficiency(simple_weapons).
+character_item_proficiency(longbow).
+character_item_proficiency(crossbow).
+character_item_proficiency(unarmed).
 % Proficiências em ferramentas
-tool_proficiency(dice).
-tool_proficiency(flute).
-tool_proficiency(bagpipe).
-tool_proficiency(lyre).
+character_tool_proficiency(dice).
+character_tool_proficiency(flute).
+character_tool_proficiency(bagpipe).
+character_tool_proficiency(lyre).
+
+% Aparência e outros
+character_age(21).
+character_height(1,85).
+character_weight(70).
+character_eye_color(light_red).
+character_skin(blue_dark_toned).
+character_hair(yellow, red, purple).
 
 %%%%%%%%%% Fim da ficha %%%%%%%%%%
