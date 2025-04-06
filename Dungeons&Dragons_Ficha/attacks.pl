@@ -1,4 +1,5 @@
 % Testes de ataque
+% Ataques com armas
 weapon_attack(Weapon_name) :-
   weapon(Weapon_name, Weapon_type, Enchantment),
   weapon_stats(Weapon_type, Dice_numbers, Damage_die, Damage_Type, Attribute),
@@ -21,6 +22,7 @@ weapon_attack(Weapon_name) :-
   write(" "), writeln(Damage_Type).
 
 % Roll types: save_dc, spell_roll, guaranteed
+% Ataques com cantrips
 cantrip_attack(Cantrip_name) :-
   cantrip_stats(Cantrip_name, Dice_numbers, Damage_die, Damage_Type, Roll_type),
   character_cantrip(Cantrip_name),
@@ -60,13 +62,16 @@ cantrip_result(Cantrip_name, Damage, Damage_Type, spell_roll) :-
   write(Damage), write(" / "), write(DamageCRIT),
   write(" "), writeln(Damage_Type).
 
+% Ataques com feitiços
 spell_attack(Spell_name, Slot_Level) :-
   spell_stats(Spell_name, Dice_numbers, Damage_die, Spell_Level, Damage_Type, Roll_type),
   character_spell(Spell_name),
   Slot_Level >= Spell_Level,
   Total_dice_numbers = Dice_numbers + (Slot_Level - Spell_Level),
   roll_dice(Total_dice_numbers, Damage_die, Damage),
-  spell_result(Spell_name, Damage, Damage_Type, Slot_Level, Roll_type).
+  spell_bonus(Spell_name, Bonus_damage),
+  Total_damage is Damage + Bonus_damage,
+  spell_result(Spell_name, Total_damage, Damage_Type, Slot_Level, Roll_type).
 
 spell_result(Spell_name, Damage, Damage_Type, Slot_Level, guaranteed) :-
   write("Damage result for "), write(Spell_name),
