@@ -1,6 +1,6 @@
 
 % Importação
-:- consult('dice.pl').
+:- consult('dados.pl').
 %%%%%%%%% Ficha de customização %%%%%%%%%%
 
 %%% Básicos
