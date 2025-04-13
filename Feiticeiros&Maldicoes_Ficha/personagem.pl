@@ -1,25 +1,16 @@
 
 % Importação
 :- consult('dados.pl').
+:- consult('genericos.pl').
 %%%%%%%%% Ficha de customização %%%%%%%%%%
 
-%%% Básicos
+%%%%%% Básicos
+% Nível total do personagem
 personagem_nivel(1).
+% Classe(s) do personagem
+personagem_classe(lutador).
+% Nível do personagem em cada classe
+personagem_nivel_classe(lutador, 1) :- !.
+personagem_nivel_classe(_, 0).
 
-%%% Atributos
-% Primários
-personagem_atributo(forca,        10).
-personagem_atributo(destreza,     10).
-personagem_atributo(constituicao, 10).
-personagem_atributo(inteligencia, 10).
-personagem_atributo(sabedoria,    10).
-personagem_atributo(carisma,      10).
-% Derivados
-personagem_iniciativa_bonus(0).
-personagem_ca_bonus(0).
-%%%
-
-personagem_pericia(acrobacia, proeficiente).
-personagem_pericia(astucia,   nao_proeficiente).
-personagem_pericia(atletismo, especialista).
-
+%%%%%% ------------------------------

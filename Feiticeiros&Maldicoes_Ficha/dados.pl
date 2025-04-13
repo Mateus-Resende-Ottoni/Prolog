@@ -6,8 +6,8 @@ rolar_dado_soma(1, Tipo_do_dado, Resultado) :-
 rolar_dado_soma(Quantidade, Tipo_do_dado, Resultado) :-
   Quantidade > 1,
   Quantidade1 is Quantidade-1,
-  roll_die_sum(Quantidade1, Tipo_do_dado, Resultado1),
-  roll_die(Tipo_do_dado, Resultado2),
+  rolar_dado_soma(Quantidade1, Tipo_do_dado, Resultado1),
+  rolar_dado(Tipo_do_dado, Resultado2),
   Resultado is Resultado1 + Resultado2.
 rolar_dados(Dados_quantidade, Tipo_do_dado, Resultado) :-
   rolar_dado_soma(Dados_quantidade, Tipo_do_dado, Resultado).
