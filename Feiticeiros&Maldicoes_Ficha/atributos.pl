@@ -1,12 +1,15 @@
 %%%%%% Ficha de Customização %%%%%%
 
-% Primários
-personagem_atributo(forca,        10).
-personagem_atributo(destreza,     10).
-personagem_atributo(constituicao, 10).
-personagem_atributo(inteligencia, 10).
-personagem_atributo(sabedoria,    10).
-personagem_atributo(carisma,      10).
+% Primários _ valor base
+%(sem bônus de origem, nível, talento e treinamento)
+personagem_atributo_base(forca,        10).
+personagem_atributo_base(destreza,     10).
+personagem_atributo_base(constituicao, 10).
+personagem_atributo_base(inteligencia, 10).
+personagem_atributo_base(sabedoria,    10).
+personagem_atributo_base(carisma,      10).
+
+
 % Derivados
 
 % Quantidade base de pontos de vida
@@ -25,6 +28,14 @@ personagem_ca_bonus(0).
 
 %%%%%%%%%% Fatos e cálculos
 
+% Total em atributos
+personagem_atributo(Atributo, Total) :-
+    personagem_atributo_base(Atributo, X),
+    personagem_atributo_bonus(Atributo, Y),
+    Total is X + Y.
+
+
+% Pontos de vida total
 pontos_de_vida(PV) :-
     personagem_pv_base(PV_base),
     personagem_pv_bonus(PV_bonus),
