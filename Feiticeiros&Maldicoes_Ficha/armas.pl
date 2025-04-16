@@ -6,7 +6,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% Lista de armas
+%%%%% Lista de armas
 % arma(Tipo, Numero_de_dados, Tipo_de_dado, Critico, [Propriedades],
 % Tipo_de_dano, Grupo_de_arma, custo).
 % Simples
@@ -69,6 +69,7 @@ arma(chakram,             2,  4, 20, [            l,             especial], cort
 arma(kunai,               1,  6, 19, [            l                      ], perfurante, dardo,    1).
 arma(rede,                0,  0, 19, [                           especial], _,          _,        2).
 arma(shuriken,            1,  4, 18, [            l                      ], cortante,   dardo,    1).
+
 % Lista de grupos aos quais um tipo de arma pertence
 % arma_tipo(Tipo, [Categorias]).
 arma_tipo(adaga,               [simples]).
@@ -128,7 +129,6 @@ arma_tipo(kunai,               [complexo, arremesso]).
 arma_tipo(rede,                [complexo, arremesso]).
 arma_tipo(shuriken,            [complexo, arremesso]).
 
-
 % Lista de alcances
 % arma_alcance(Tipo, Alcance_padrao, Alcance_maximo).
 % Alcance padrão é o alcance máximo sem penalidades
@@ -157,3 +157,35 @@ arma_alcance(chakram,            18,  36).
 arma_alcance(kunai,              12,  30).
 arma_alcance(rede,                9,  27).
 arma_alcance(shuriken,           12,  30).
+
+%%%%%
+
+% Lista de propriedades de ferramentas amaldicoadas
+
+arma_propriedade(adaptada).
+arma_propriedade(afiada).
+arma_propriedade(amplificadora).
+arma_propriedade(armazenadora).
+arma_propriedade(balanceada).
+arma_propriedade(canalizadora).
+arma_propriedade(catalisadora).
+arma_propriedade(certeira).
+arma_propriedade(compatimento).
+arma_propriedade(defensora).
+arma_propriedade(destruidora).
+arma_propriedade(discreta).
+arma_propriedade(drenadora).
+arma_propriedade(elemental).
+arma_propriedade(fidedgina).
+arma_propriedade(harmozinada).
+arma_propriedade(imponente).
+arma_propriedade(infalivel).
+arma_propriedade(longa).
+arma_propriedade(mira).
+arma_propriedade(otimizada).
+arma_propriedade(penetrante).
+arma_propriedade(potente).
+arma_propriedade(precisa).
+arma_propriedade(reluzente).
+arma_propriedade(retorno).
+arma_propriedade(sintonizada).

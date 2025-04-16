@@ -1,6 +1,8 @@
 % Dados
 rolar_dado(Number, Result) :-
   random_between(1, Number, Result).
+rolar_dado_soma(0, _, Resultado) :-
+  Resultado is 0, !.
 rolar_dado_soma(1, Tipo_do_dado, Resultado) :-
   rolar_dado(Tipo_do_dado, Resultado), !.
 rolar_dado_soma(Quantidade, Tipo_do_dado, Resultado) :-
