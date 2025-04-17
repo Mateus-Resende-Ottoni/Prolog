@@ -1,7 +1,7 @@
 %%%%%% Ficha de Customização %%%%%%
 
 % Armas do personagem
-% personagem_arma(Nome_da_arma, Grau_da_arma).
+% personagem_arma(Nome_da_arma, Tipo_de_arma, Grau_da_arma).
 % personagem_arma_propriedades([Propriedades]).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -160,7 +160,7 @@ arma_alcance(shuriken,           12,  30).
 
 %%%%%
 
-% Lista de propriedades de ferramentas amaldicoadas
+% Lista de propriedades de armas amaldicoadas
 
 arma_propriedade(adaptada).
 arma_propriedade(afiada).
