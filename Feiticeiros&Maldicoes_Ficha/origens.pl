@@ -13,7 +13,7 @@ personagem_atributo_bonus(_,            0).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
+%%%%%%%%%%
 % Lista de origens
 origem(inato).
 origem(herdado).
@@ -63,4 +63,5 @@ anatomia_caracteristicas(membros_extras).
 anatomia_caracteristicas(olhos_sombrios).
 anatomia_caracteristicas(presenca_nefasta).
 anatomia_caracteristicas(sangue_toxico).
+%%%%%%%%%%
 

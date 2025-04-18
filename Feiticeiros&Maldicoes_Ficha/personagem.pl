@@ -3,9 +3,12 @@
 :- consult('armas.pl').
 :- consult('atributos.pl').
 :- consult('dados.pl').
+:- consult('escudos.pl').
 :- consult('genericos.pl').
+:- consult('itens.pl').
 :- consult('pericias.pl').
 :- consult('origens.pl').
+:- consult('uniformes.pl').
 %%%%%%%%% Ficha de customização %%%%%%%%%%
 
 personagem_nome("Satoru Gojo").
@@ -14,11 +17,11 @@ personagem_nome("Satoru Gojo").
 % Nível total do personagem
 personagem_nivel(1).
 
-% Classe(s) do personagem
-personagem_classe(lutador).
-% Nível do personagem em cada classe
-personagem_nivel_classe(lutador, 1) :- !.
-personagem_nivel_classe(_, 0).
+% Especialização(ões) do personagem
+personagem_especializacao(lutador).
+% Nível do personagem em cada especialização
+personagem_nivel_especializacao(lutador, 1) :- !.
+personagem_nivel_especializacao(_, 0).
 
 % Origem do personagem
 personagem_origem(herdado).
