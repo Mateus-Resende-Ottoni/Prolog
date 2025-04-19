@@ -1,5 +1,11 @@
 %%%%%% Ficha de Customização %%%%%%
 
+% Origem do personagem
+personagem_origem(herdado).
+% Clã é mais relevante para a origem herdado, mas também funciona
+%  como uma informação genérica do personagem
+personagem_cla(gojo).
+
 % Bônus de atributo de origem
 personagem_atributo_bonus(forca,        0) :- !.
 personagem_atributo_bonus(destreza,     0) :- !.
@@ -9,7 +15,6 @@ personagem_atributo_bonus(sabedoria,    0) :- !.
 personagem_atributo_bonus(carisma,      0) :- !.
 % Valor padrão
 personagem_atributo_bonus(_,            0).
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
