@@ -45,4 +45,31 @@ aptidao(aura_redirecionada, aura).
 aptidao(concentrar_aura, aura).
 aptidao(golpe_com_aura, aura).
 aptidao(aura_excessiva, aura).
-
+% Aptidões de Controle e Leitura
+aptidao(rastreio_avancado ,controle_e_leitura).
+aptidao(leitura_rapida_de_energia ,controle_e_leitura).
+aptidao(canalizar_em_golpe ,controle_e_leitura).
+aptidao(canalizacao_avancada ,controle_e_leitura).
+aptidao(canalizacao_maxima ,controle_e_leitura).
+aptidao(cobrir-se ,controle_e_leitura).
+aptidao(cobertura_avancada ,controle_e_leitura).
+aptidao(projetar_energia ,controle_e_leitura).
+aptidao(projecao_avancada ,controle_e_leitura).
+aptidao(projecao_maxima ,controle_e_leitura).
+aptidao(projecao_dividida ,controle_e_leitura).
+aptidao(expandir_aura ,controle_e_leitura).
+aptidao(identificacao_de_itens ,controle_e_leitura).
+aptidao(leitura_de_aura ,controle_e_leitura).
+aptidao(punho_divergente ,controle_e_leitura).
+aptidao(estimulo_muscular ,controle_e_leitura).
+aptidao(estimulo_muscular_avancado ,controle_e_leitura).
+% Aptidões de Domínio
+aptidao(dominio_simples, dominio).
+aptidao(anular_tecnica, dominio).
+aptidao(espaco_em_batalha, dominio).
+aptidao(dominancia_absoluta, dominio).
+aptidao(expansao_de_dominio_incompleta, dominio).
+aptidao(expansao_de_dominio_completa, dominio).
+aptidao(acerto_garantido, dominio).
+aptidao(expansao_de_dominio_sem_barreiras, dominio).
+aptidao(amplificacao_de_dominio, dominio).
