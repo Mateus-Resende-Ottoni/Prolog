@@ -95,7 +95,8 @@ aptidao(tecnica_maxima,                 especial).
 
 %% Aptidões exclusivas à maldições
 % Aptidões de Anatomia
-aptidao(absorcao_elemental,         anatomia).
+aptidao(absorcao_elemental,         anatomia). % Tem que ser renomeada pois
+                                               %  tem outra de mesmo nome
 aptidao(armas_naturais,             anatomia).
 aptidao(armas_naturais_aprimoradas, anatomia).
 aptidao(composicao_elemental,       anatomia).
@@ -117,3 +118,229 @@ aptidao(regeneracao_maxima,     especial).
 aptidao(regeneracao_de_membros, especial).
 aptidao(fluxo_imparaval,        especial).
 aptidao(area_de_dominio,        especial).
+
+%%%%% Lista de Pré-Requisitos para aptidões_amaldicoadas
+%% Lista base
+% Aptidões de Aura
+aptidao_requisito(aura_elemental_aprimorada) :-
+    personagem_aptidao(aura_elemental), !.
+aptidao_requisito(aura_impenetravel) :-
+    personagem_aptidao(aura_reforcada),
+    personagem_nivel(N), N >= 10,
+    personagem_aptidao_nivel(energia, A_N), A_N >= 2, !.
+aptidao_requisito(casulo_de_energia) :-
+    personagem_aptidao(aura_impenetravel),
+    personagem_nivel(N), N >= 12,
+    personagem_aptidao_nivel(energia, A_N), A_N >= 4, !.
+aptidao_requisito(aura_inofensiva) :-
+    personagem_atributo(carisma, A), A >= 16, !.
+aptidao_requisito(aura_controlada) :-
+    personagem_atributo(destreza, A), A >= 16,
+    personagem_pericia(furtividade, P), (P = proficiente; P = especialista), !.
+aptidao_requisito(aura_comandante) :-
+    personagem_atributo(carisma, A), A >= 16,
+    personagem_nivel(N), N >= 8, !.
+aptidao_requisito(aura_macica) :-
+    personagem_atributo(constituicao, A), A >= 16, !.
+aptidao_requisito(aura_chamativa) :-
+    personagem_atributo(carisma, A), A >= 16, !.
+aptidao_requisito(absorcao_elemental) :-
+    personagem_aptidao(aura_elemental), !.
+aptidao_requisito(aura_de_contencao) :-
+    personagem_atributo(forca, A1), personagem_atributo(constituicao, A2),
+    (A1 >= 15; A2 >= 15), !.
+aptidao_requisito(aura_drenadora) :-
+    personagem_nivel(N), N >= 6,
+    personagem_aptidao_nivel(energia, A_N), A_N >= 2, !.
+aptidao_requisito(aura_embacada) :-
+    personagem_atributo(destreza, A), A >= 16, !.
+aptidao_requisito(enganacao_projetada) :-
+    personagem_atributo(destreza, A), A >= 18,
+    personagem_nivel(N), N >= 4, !.
+aptidao_requisito(aura_redirecionadora) :-
+    personagem_atributo(destreza, A), A >= 16, !.
+aptidao_requisito(aura_excessiva) :-
+    personagem_aptidao(aura_reforcada),
+    personagem_atributo(constituicao, A), A >= 16,
+    personagem_nivel(N), N >= 8, !.
+% Aptidões de Controle e Leitura
+aptidao_requisito(canalizacao_avancada) :-
+    personagem_aptidao(canalizar_em_golpe),
+    personagem_atributo(forca, A1), personagem_atributo(destreza, A2),
+    (A1 >= 18; A2 >= 18),
+    personagem_nivel(N), N >= 8,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 2, !.
+aptidao_requisito(canalizacao_maxima) :-
+    personagem_aptidao(canalizar_avancada),
+    personagem_atributo(forca, A1), personagem_atributo(destreza, A2),
+    (A1 >= 20; A2 >= 20),
+    personagem_nivel(N), N >= 16,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 4, !.
+aptidao_requisito(cobertura_avancada) :-
+    personagem_aptidao(cobrir-se),
+    personagem_nivel(N), N >= 10,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 2, !.
+aptidao_requisito(projecao_avancada) :-
+    personagem_aptidao(projetar_energia),
+    personagem_atributo(destreza, A1), personagem_atributo(inteligencia, A2),
+    (A1 >= 18; A2 >= 18),
+    personagem_nivel(N), N >= 8,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 2, !.
+aptidao_requisito(projecao_maxima) :-
+    personagem_aptidao(projecao_avancada),
+    personagem_atributo(destreza, A1), personagem_atributo(inteligencia, A2),
+    (A1 >= 20; A2 >= 20),
+    personagem_nivel(N), N >= 16,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 4, !.
+aptidao_requisito(projecao_dividida) :-
+    personagem_aptidao(projecao_avancada),
+    personagem_nivel(N), N >= 12,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 3, !.
+aptidao_requisito(expandir_aura) :-
+    personagem_nivel(N), N >= 6, !.
+aptidao_requisito(estimulo_muscular_avancado) :-
+    personagem_aptidao(estimulo_muscular),
+    personagem_atributo(forca, A1), personagem_atributo(destreza, A2),
+    (A1 >= 18; A2 >= 18),
+    personagem_nivel(N), N >= 4,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 2, !.
+% Aptidões de Domínio
+aptidao_requisito(dominio_simples) :-
+    personagem_nivel(N), N >= 4, !.
+aptidao_requisito(anular_tecnica) :-
+    personagem_aptidao(dominio_simples),
+    personagem_nivel(N), N >= 8,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 3, !.
+aptidao_requisito(espaco_em_batalha) :-
+    personagem_aptidao(dominio_simples),
+    personagem_nivel(N), N >= 8,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 1, !.
+aptidao_requisito(dominancia_absoluta) :-
+    personagem_aptidao(espaco_em_batalha),
+    personagem_nivel(N), N >= 12,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 3, !.
+aptidao_requisito(expansao_de_dominio_incompleta) :-
+    personagem_nivel(N), N >= 8,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 2, !.
+aptidao_requisito(expansao_de_dominio_completa) :-
+    personagem_aptidao(tecnicas_de_barreira),
+    personagem_aptidao(expansao_de_dominio_incompleta),
+    personagem_nivel(N), N >= 10,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 3, !.
+aptidao_requisito(acerto_garantido) :-
+    personagem_aptidao(expansao_de_dominio_completa),
+    personagem_pericia(feiticaria, P), (P = proficiente; P = especialista),
+    personagem_nivel(N), N >= 14,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 4, !.
+aptidao_requisito(expansao_de_dominio_sem_barreiras) :-
+    personagem_aptidao(acerto_garantido),
+    personagem_pericia(feiticaria, P), P = especialista,
+    personagem_nivel(N), N >= 18,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 5, !.
+aptidao_requisito(amplificacao_de_dominio) :-
+    personagem_nivel(N), N >= 8,
+    personagem_aptidao_nivel(dominio, A_N), A_N >= 2, !.
+% Aptidões de Barreira
+aptidao_requisito(barreira_rapida) :-
+    personagem_aptidao(tecnicas_de_barreira),
+    personagem_nivel(N), N >= 6,
+    personagem_aptidao_nivel(barreira, A_N), A_N >= 2, !.
+aptidao_requisito(barreira_imediata) :-
+    personagem_aptidao(barreira_rapida),
+    personagem_nivel(N), N >= 10,
+    personagem_aptidao_nivel(barreira, A_N), A_N >= 3, !.
+aptidao_requisito(cortina) :-
+    personagem_aptidao(tecnicas_de_barreira), !.
+% Aptidões de Energia Reversa
+aptidao_requisito(energia_reversa) :-
+    personagem_pericia(feiticaria, P), (P = proeficiente; P = especialista),
+    personagem_nivel(N), N >= 8,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 3, !.
+aptidao_requisito(liberacao_de_energia_reversa) :-
+    personagem_aptidao(energia_reversa),
+    personagem_nivel(N), N >= 10, !.
+aptidao_requisito(cura_amplificada) :-
+    personagem_aptidao(energia_reversa),
+    personagem_nivel(N), N >= 12,
+    personagem_aptidao_nivel(energia_reversa, A_N), A_N >= 3, !.
+aptidao_requisito(cura_em_grupo) :-
+    personagem_aptidao(liberacao_de_energia_reversa), !.
+aptidao_requisito(canalizar_energia_reversa) :-
+    personagem_aptidao(canalizar_em_golpe),
+    personagem_aptidao(energia_reversa), !.
+aptidao_requisito(fluxo_constante) :-
+    personagem_aptidao(energia_reversa),
+    personagem_nivel(N), N >= 12,
+    personagem_aptidao_nivel(energia_reversa, A_N), A_N >= 3, !.
+aptidao_requisito(regeneracao_aprimorada) :-
+    personagem_aptidao(cura_amplificada),
+    personagem_nivel(N), N >= 15,
+    personagem_aptidao_nivel(energia_reversa, A_N), A_N >= 4, !.
+% Aptidões Especiais
+aptidao_requisito(raio_negro) :-
+    personagem_atributo(forca, A1), personagem_atributo(destreza, A2),
+    (A1 >= 18; A2 >= 18),
+    personagem_nivel(N), N >= 10,
+    personagem_aptidao_nivel(controle_e_leitura, A_N), A_N >= 3, !.
+aptidao_requisito(abencoado_pelas_faiscas_negras) :-
+    personagem_aptidao(raio_negro),
+    personagem_nivel(N), N >= 15,
+    personagem_aptidao_nivel(controle_e_leitura, A_N1), A_N1 >= 4,
+    personagem_aptidao_nivel(energia,            A_N2), A_N2 >= 3, !.
+aptidao_requisito(reversao_de_tecnica) :-
+    personagem_aptidao(energia_reversa),
+    personagem_nivel(N), N >= 12, !.
+aptidao_requisito(reversao_de_tecnica) :-
+    personagem_pericia(feiticaria, P), (P = proeficiente; P = especialista),
+    personagem_nivel(N), N >= 17, !. % Placeholder para usar técnicas nível 5
+
+%% Aptidões exclusivas a maldições
+% Aptidões de Anatomia
+aptidao_requisito(absorcao_elemental) :-       % Possível conflito devido
+                                               %  a nome
+    personagem_aptidao(composicao_elemental),
+    personagem_nivel(N), N >= 8, !.
+aptidao_requisito(armas_naturais_aprimoradas) :-
+    personagem_aptidao(armas_naturais),
+    personagem_nivel(N), N >= 5, !.
+aptidao_requisito(composicao_elemental) :-
+    personagem_nivel(N), N >= 4, !.
+aptidao_requisito(crescimento_corporal) :-
+    personagem_nivel(N), N >= 5, !.
+aptidao_requisito(desenvolvimento_fisico) :-
+    personagem_nivel(N), N >= 4, !.
+aptidao_requisito(revestimento) :-
+    personagem_atributo(constituicao, A), A >= 14,
+    personagem_nivel(N), N >= 4, !.
+aptidao_requisito(revestimento_evoluido) :-
+    personagem_atributo(constituicao, A), A >= 20,
+    personagem_nivel(N), N >= 10, !.
+aptidao_requisito(superioridade_fisica) :-
+    personagem_pericia(luta, P), (P = proeficiente; P = especialista),
+    personagem_nivel(N), N >= 5, !.
+% Aptidões de Controle e Leitura
+aptidao_requisito(absorcao_amaldicoada) :-
+    personagem_pericia(feiticaria, P), (P = proeficiente; P = especialista), !.
+aptidao_requisito(estoque_ampliado) :-
+    personagem_nivel(N), N >= 10, !.
+aptidao_requisito(extracao_de_potencial) :-
+    personagem_nivel(N), N >= 5, !.
+aptidao_requisito(protecao_constante) :-
+    personagem_atributo(constituicao, A), A >= 20,
+    personagem_nivel(N), N >= 10, !.
+% Aptidões Especiais
+aptidao_requisito(regeneracao_ampliada) :-
+    personagem_aptidao(regeneracao_corporal),
+    personagem_nivel(N), N >= 10, !.
+aptidao_requisito(regeneracao_maxima) :-
+    personagem_aptidao(regeneracao_ampliada),
+    personagem_nivel(N), N >= 16, !.
+aptidao_requisito(regeneracao_de_membros) :-
+    personagem_aptidao(regeneracao_ampliada),
+    personagem_nivel(N), N >= 12, !.
+aptidao_requisito(area_de_dominio) :-
+    personagem_pericia(feiticaria, P), (P = proeficiente; P = especialista),
+    personagem_nivel(N), N >= 10, !.
+
+% Valor padrão (Nenhum pré-requisito)
+aptidao_requisito(_) :- true.
