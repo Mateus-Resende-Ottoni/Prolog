@@ -19,7 +19,7 @@ personagem_atributo_bonus(_,            0).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%
-% Lista de origens
+%%% Lista de origens
 origem(inato).
 origem(herdado).
 origem(derivado).
@@ -27,6 +27,8 @@ origem(restringido).
 origem(feto_amaldicoado_hibrido).
 origem(sem_tecnica).
 origem(corpo_amaldicoado_mutante).
+% Origens adicionais
+origem(maldicao).
 
 % Características obtidas pela origem
 origem_caracteristicas(inato, talento_natural).
