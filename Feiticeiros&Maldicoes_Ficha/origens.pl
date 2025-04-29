@@ -19,7 +19,7 @@ personagem_atributo_bonus(_,            0).
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%
-%%% Lista de origens
+%%%%% Lista de origens
 origem(inato).
 origem(herdado).
 origem(derivado).
@@ -28,9 +28,10 @@ origem(feto_amaldicoado_hibrido).
 origem(sem_tecnica).
 origem(corpo_amaldicoado_mutante).
 % Origens adicionais
-origem(maldicao).
+origem(maldicao). % Detalhada no Grimório das Maldições
+origem(feiticeiro_reencarnado). % Detalhada no Guia do Narrador
 
-% Características obtidas pela origem
+%%%%% Características obtidas pela origem
 origem_caracteristicas(inato, talento_natural).
 origem_caracteristicas(inato, marca_registrada).
 
@@ -44,19 +45,27 @@ origem_caracteristicas(restringido, restricao_celeste).
 origem_caracteristicas(feto_amaldicoado_hibrido, heranca_maldita).
 origem_caracteristicas(feto_amaldicoado_hibrido, fisico_amaldicoado).
 origem_caracteristicas(feto_amaldicoado_hibrido, vigor_maldito).
+
 origem_caracteristicas(sem_tecnica, estudos_dedicados).
 origem_caracteristicas(sem_tecnica, empenho_implacavel).
 
 origem_caracteristicas(corpo_amaldicoado_mutante, forma_de_vida_sintetica).
 origem_caracteristicas(corpo_amaldicoado_mutante, mutacao_abrupta).
 
-% Características de clãs (origem Herdado)
+% Características de origens adicionais
+origem_caracteristicas(maldicao, existencia_metafisica).
+origem_caracteristicas(maldicao, natureza_amaldicoada).
+
+origem_caracteristicas(feiticeiro_reencarnado, conhecimentos_passados).
+origem_caracteristicas(feiticeiro_reencarnado, experiencia_do_reencarnado).
+
+%%% Características de clãs (origem Herdado)
 cla_caracteristicas(gojo,    potencial_lendario).
 cla_caracteristicas(inumaki, olhos_de_cobra_e_presas).
 cla_caracteristicas(kamo,    valor_do_sangue).
 cla_caracteristicas(zenin,   foco_no_poder).
 
-% Características de anatomia (origem Feto Amaldiçoado Híbrido)
+%%% Características de anatomia (origem Feto Amaldiçoado Híbrido)
 anatomia_caracteristicas(alma_maldita).
 anatomia_caracteristicas(anatomia_incompreensivel).
 anatomia_caracteristicas(arma_natural).
