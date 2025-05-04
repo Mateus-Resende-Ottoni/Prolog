@@ -71,6 +71,103 @@ especializacao_atributos(suporte,                 [carisma, sabedoria]).
 especializacao_atributos(restringido,             [forca, destreza, constituicao, inteligencia, sabedoria, carisma]).
 %%%%%
 
+%%%%% Listas de habilidades base de especializações
+%%% Habilidades base do Lutador
+especializacao_habilidade_base(lutador, mestre_da_luta).
+especializacao_habilidade_base(lutador, empolgacao).
+especializacao_habilidade_base(lutador, reflexo_evasivo).
+especializacao_habilidade_base(lutador, gosto_pela_luta).
+especializacao_habilidade_base(lutador, lutador_superior).
+
+%%% Habilidades base do Especialista em Combate
+especializacao_habilidade_base(especialista_em_combate, repertorio_do_especialista).
+especializacao_habilidade_base(especialista_em_combate, arte_do_combate).
+especializacao_habilidade_base(especialista_em_combate, golpe_especial).
+especializacao_habilidade_base(especialista_em_combate, renovacao_pelo_sangue).
+especializacao_habilidade_base(especialista_em_combate, autossuficiente).
+
+%%% Habilidades base do Especialista em Técnica
+especializacao_habilidade_base(especialista_em_tecnica, dominio_dos_fundamentos).
+especializacao_habilidade_base(especialista_em_tecnica, conjuracao_aprimorada).
+especializacao_habilidade_base(especialista_em_tecnica, adiantar_a_evolucao).
+especializacao_habilidade_base(especialista_em_tecnica, foco_amaldicoado).
+especializacao_habilidade_base(especialista_em_tecnica, o_honrado).
+
+%%% Habilidades base do Controlador
+especializacao_habilidade_base(controlador, treinamento_em_controle).
+especializacao_habilidade_base(controlador, reserva_para_invocacao).
+especializacao_habilidade_base(controlador, companhia_libertadora).
+especializacao_habilidade_base(controlador, apogeu).
+especializacao_habilidade_base(controlador, apice_do_controle).
+
+%%% Habilidades base do Suporte
+especializacao_habilidade_base(suporte, suporte_em_combate).
+especializacao_habilidade_base(suporte, presenca_inspiradora).
+especializacao_habilidade_base(suporte, versatilidade).
+especializacao_habilidade_base(suporte, medicina_infalivel).
+especializacao_habilidade_base(suporte, mestre_curandeiro).
+
+%%% Habilidades base do Restringido
+especializacao_habilidade_base(restringido, restrito_pelos_ceus).
+especializacao_habilidade_base(restringido, ataque_furtivo).
+especializacao_habilidade_base(restringido, esquiva_sobre_humana).
+especializacao_habilidade_base(restringido, restricao_definitiva).
+especializacao_habilidade_base(restringido, libertacao_do_destino).
+
+%%%% Lista com opções de escolhas em habilidades base que possuem tais.
+%% Lutador
+manobra(ajuste).
+manobra(comando).
+manobra(desarme).
+manobra(esquiva).
+manobra(trabalho_de_pes).
+
+%% Especialista em Combate
+estilo_de_combate(estilo_defensivo).
+estilo_de_combate(estilo_do_arremessador).
+estilo_de_combate(estilo_do_duelista).
+estilo_de_combate(estilo_do_interceptador).
+estilo_de_combate(estilo_do_protetor).
+estilo_de_combate(estilo_distante).
+estilo_de_combate(estilo_duplo).
+estilo_de_combate(estilo_massivo).
+
+arte_de_combate(arremesso_agil).
+arte_de_combate(distracao_letal).
+arte_de_combate(execucao_silenciosa).
+arte_de_combate(golpe_descendente).
+arte_de_combate(investida_imediata).
+
+golpe_especial(sanguinario).
+golpe_especial(longo).
+golpe_especial(elemental).
+golpe_especial(letal).
+golpe_especial(penetrante).
+golpe_especial(preciso).
+golpe_especial(impactante).
+golpe_especial(amplo).
+golpe_especial(lento).
+golpe_especial(sacrificio).
+golpe_especial(desfocado).
+
+%% Especialista em Técnica
+mudanca_de_fundamento(tecnica_cruel).
+mudanca_de_fundamento(tecnica_cuidadosa).
+mudanca_de_fundamento(tecnica_distante).
+mudanca_de_fundamento(tecnica_duplicada).
+mudanca_de_fundamento(tecnica_potente).
+mudanca_de_fundamento(tecnica_precisa).
+mudanca_de_fundamento(tecnica_rapida).
+
+foco_amaldicoado(destruicao).
+foco_amaldicoado(economia).
+foco_amaldicoado(refino).
+
+%% Controlador
+apogeu(controle_concentrado).
+apogeu(controle_disperso).
+apogeu(controle_sintonizado).
+
 %%%%% Listas de habilidades de especializações
 %%% Habilidades do Lutador
 especializacao_habilidade(lutador, aparar_projeteis).
@@ -276,5 +373,92 @@ especializacao_habilidade(controlador, critico_aprimorado).
 especializacao_habilidade(controlador, mestre_do_controle).
 
 %%% Habilidades do Suporte
+especializacao_habilidade(suporte, analise_profunda).
+especializacao_habilidade(suporte, apoiar_e_atacar).
+especializacao_habilidade(suporte, apoiar_e_curar).
+especializacao_habilidade(suporte, apoio_defensivo).
+especializacao_habilidade(suporte, apoio_superior).
+especializacao_habilidade(suporte, conceder_outra_chance).
+especializacao_habilidade(suporte, comando_motivador).
+especializacao_habilidade(suporte, contaminar_com_determinacao).
+especializacao_habilidade(suporte, contra_ataque).
+especializacao_habilidade(suporte, cura_aperfeicoada).
+especializacao_habilidade(suporte, expandir_repertorio).
+especializacao_habilidade(suporte, fisico_controlado).
+especializacao_habilidade(suporte, inimigo_comum).
+especializacao_habilidade(suporte, interferencia).
+especializacao_habilidade(suporte, intervencao).
+especializacao_habilidade(suporte, letalidade_cirurgica).
+especializacao_habilidade(suporte, mobilidade_avancada).
+especializacao_habilidade(suporte, negacao_critica).
+especializacao_habilidade(suporte, olhar_agucado).
+especializacao_habilidade(suporte, otimizacao_de_espaco).
+especializacao_habilidade(suporte, posicionamento_estrategico).
+especializacao_habilidade(suporte, pronto_para_agir).
+especializacao_habilidade(suporte, protetor).
+especializacao_habilidade(suporte, sintonizacao_vital).
+especializacao_habilidade(suporte, transmitir_conhecimento).
+especializacao_habilidade(suporte, troca_rapida).
+especializacao_habilidade(suporte, agilidade_no_campo_de_batalha).
+especializacao_habilidade(suporte, cobrir_aliado).
+especializacao_habilidade(suporte, cura_avancada_em_grupo).
+especializacao_habilidade(suporte, inspirar_aliados).
+especializacao_habilidade(suporte, pre_analise).
+especializacao_habilidade(suporte, recompensa_pelo_sucesso).
+especializacao_habilidade(suporte, descarga_reanimadora).
+especializacao_habilidade(suporte, devolver_na_mesma_moeda).
+especializacao_habilidade(suporte, incitar_vigor).
+especializacao_habilidade(suporte, ajustes_em_equipamentos).
+especializacao_habilidade(suporte, aptidoes_de_suporte).
+especializacao_habilidade(suporte, criar_medicina).
+especializacao_habilidade(suporte, elevar_sucesso).
+especializacao_habilidade(suporte, motivacao_pelo_triunfo).
+especializacao_habilidade(suporte, necessidade_de_continuar).
+especializacao_habilidade(suporte, taticas_defensivas).
+especializacao_habilidade(suporte, comando_transcendente).
+especializacao_habilidade(suporte, sobrecura).
+especializacao_habilidade(suporte, reacao_necessaria).
+especializacao_habilidade(suporte, purificacao_da_alma).
 
 %%% Habilidades do Restringido
+especializacao_habilidade(restringido, ainda_de_pe).
+especializacao_habilidade(restringido, aproximacao_instintiva).
+especializacao_habilidade(restringido, ataque_inconsequente).
+especializacao_habilidade(restringido, camuflagem_aprimorada).
+especializacao_habilidade(restringido, destruir_equipamento).
+especializacao_habilidade(restringido, finta_rapida).
+especializacao_habilidade(restringido, foco_no_inimigo).
+especializacao_habilidade(restringido, golpes_desequilibrantes).
+especializacao_habilidade(restringido, imitacao).
+especializacao_habilidade(restringido, maldicao_companheira).
+especializacao_habilidade(restringido, manejo_superior).
+especializacao_habilidade(restringido, mesmo_morto).
+especializacao_habilidade(restringido, ponto_cego).
+especializacao_habilidade(restringido, precisao_forcada).
+especializacao_habilidade(restringido, punhos_destruidores).
+especializacao_habilidade(restringido, roubo_de_habilidade).
+especializacao_habilidade(restringido, surote_de_adrenalina).
+especializacao_habilidade(restringido, valorizar_invocacao).
+especializacao_habilidade(restringido, versatilidade).
+especializacao_habilidade(restringido, resiliencia_pela_adrenalina).
+especializacao_habilidade(restringido, ataque_inconsequente_aprimorado).
+especializacao_habilidade(restringido, frenesi).
+especializacao_habilidade(restringido, perceber_o_ar).
+especializacao_habilidade(restringido, tecnicas_de_memorizacao).
+especializacao_habilidade(restringido, adrenalina_intensificadora).
+especializacao_habilidade(restringido, cacador_de_feiticeiros).
+especializacao_habilidade(restringido, desenvolver_ideias).
+especializacao_habilidade(restringido, corpo_de_aco).
+especializacao_habilidade(restringido, disparada_trovejante).
+especializacao_habilidade(restringido, ataque_extra).
+especializacao_habilidade(restringido, barreira_inamovivel).
+especializacao_habilidade(restringido, forca_imparavel).
+especializacao_habilidade(restringido, reacao_rapida).
+especializacao_habilidade(restringido, imitacao_perfeita).
+especializacao_habilidade(restringido, presenca_ameacadora).
+especializacao_habilidade(restringido, respeito_celeste).
+especializacao_habilidade(restringido, assassinar).
+especializacao_habilidade(restringido, mente_limpa).
+especializacao_habilidade(restringido, retaliacao).
+especializacao_habilidade(restringido, adrenalina_absoluta).
+especializacao_habilidade(restringido, apice_corporal_humano).
