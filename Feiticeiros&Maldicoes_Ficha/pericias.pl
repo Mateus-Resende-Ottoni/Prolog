@@ -86,3 +86,27 @@ pericia_atributo(vontade,         sabedoria).
 % pericia_atributo(direcao,         inteligencia) :- !.
 % pericia_atributo(sobrevivencia,   sabedoria) :- !.
 % pericia_atributo(tecnologia,      inteligencia) :- !.
+
+
+%%%%% Cálculo de modificador de perícia
+pericia_modificador(Pericia, Mod) :-
+    pericia_atributo(Pericia, Atributo),
+    personagem_atributo(Atributo, Total),
+    modificador(Total, Mod_Atributo),
+    personagem_nivel(Nivel),
+    maestria(Nivel, Maestria_Mod),
+    personagem_pericia(Pericia, Maestria),
+    pericia_modificador_calc(Maestria, Maestria_Mod, Mod_Maestria),
+    pericia_modificador_extra(Pericia, Mod_Extra),
+    Mod is Mod_Atributo + (Nivel / 2) + Mod_Maestria + Mod_Extra.
+
+%% Cálculo de modificador de maestria de perícia
+pericia_modificador_calc(especialista,     Maestria_Mod, Mod) :-
+    Mod is Maestria_Mod * 2.
+pericia_modificador_calc(proeficiente,     Maestria_Mod, Mod) :-
+    Mod is Maestria_Mod * 1.
+pericia_modificador_calc(nao_proeficiente, _           , Mod) :-
+    Mod is 0.
+
+%% Bônus pertinentes a perícias específicas
+pericia_modificador_extra(_, 0).
