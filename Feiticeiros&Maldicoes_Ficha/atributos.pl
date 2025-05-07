@@ -62,13 +62,10 @@ modificador(Valor, 10) :- Valor >= 30.
 personagem_maestria(Maestria) :-
     personagem_nivel(Nivel),
     maestria(Nivel, Maestria).
-% Tabela de maesria
-maestria(Nivel, 2) :- Nivel >= 1, Nivel =< 4, !.
-maestria(Nivel, 3) :- Nivel >= 5, Nivel =< 8, !.
-maestria(Nivel, 4) :- Nivel >= 9, Nivel =< 12, !.
-maestria(Nivel, 5) :- Nivel >= 13, Nivel =< 16, !.
-maestria(Nivel, 6) :- Nivel >= 17.
-
+% Cálculo de maestria
+maestria(Nivel, Maestria_Mod) :-
+    divisao_baixo(Nivel-1, 4, Aumento),
+    Maestria_Mod is 2 + Aumento.
 
 %%%%% Pontos de vida total
 pontos_de_vida(PV) :-
@@ -93,16 +90,20 @@ iniciativa_extra(Iniciativa_extra) :-
     Iniciativa_extra is B1 + B2 + B3 + B5.
 
 iniciativa_extra_bonus(instinto_sanguinario,      Bonus) :-
-    personagem_anatomia_caracteristicas(instinto_sanguinario), !,
+    personagem_anatomia_caracteristica(_),
+    personagem_anatomia_caracteristica(instinto_sanguinario), !,
     personagem_maestria(Bonus).
 iniciativa_extra_bonus(reacao_rapida,             Bonus) :-
+    personagem_habilidade(_, _),
     personagem_habilidade(reacao_rapida, Atributo), !,
     personagem_modificador(Atributo, Bonus).
 iniciativa_extra_bonus(pronto_para_agir,          Bonus) :-
+    personagem_habilidade(_),
     personagem_habilidade(pronto_para_agir), !,
     personagem_modificador(carisma, Bonus).
 % Arma com a propriedade 'Otimizada'
 iniciativa_extra_bonus(tecnicas_de_reacao_rapida, Bonus) :-
+    personagem_talento(_),
     personagem_talento(tecnicas_de_reacao_rapida), !,
     Bonus is 5.
 

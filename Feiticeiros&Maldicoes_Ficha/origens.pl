@@ -16,6 +16,10 @@ personagem_atributo_bonus(carisma,      0) :- !.
 % Valor padrão
 personagem_atributo_bonus(_,            0).
 
+% Exemplo de como inserir características de anatomia
+%  para a origem feto amaldiçoado híbrido
+% personagem_anatomia_caracteristica(alma_maldita).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%
