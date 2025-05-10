@@ -4,6 +4,10 @@
 personagem_talento(ataque_infalivel).
 personagem_talento(incremento_de_atributo, inteligencia).
 
+% Talentos com múltiplas escolhas são escritos várias vezes
+% personagem_talento(mestre_da_criacao, oficio_ferreiro).
+% personagem_talento(mestre_da_criacao, oficio_medico).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%% Lista de Talentos

@@ -15,6 +15,12 @@ personagem_nivel_especializacao(especialista_em_tecnica, 1) :- !.
 personagem_nivel_especializacao(_, 0).
 
 %%% Habilidades de especializações
+% Habilidades base são inferidas pelo nível do personagem
+%  na especialização, sendo necessário especificar apenas
+%  no caso de haver escolhas
+personagem_habilidade_base(dominio_dos_fundamentos, tecnica_cruel).
+personagem_habilidade_base(dominio_dos_fundamentos, tecnica_duplicada).
+
 personagem_habilidade(reacao_rapida, inteligencia).
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
